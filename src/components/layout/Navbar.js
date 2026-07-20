@@ -7,10 +7,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useCurrentUser, useAuthMutations } from "@/lib/hooks/useAuth.js";
 import { Button } from "@/components/ui/Button.js";
 
+// Always-visible real routes (not anchors) - Explore/About/Contact give logged-out
+// visitors 3 distinct pages, and combined with role links below, logged-in users
+// see 5+ distinct pages as required.
 const NAV_LINKS = [
   { href: "/explore", label: "Explore" },
-  { href: "/#how-it-works", label: "How it works" },
-  { href: "/#categories", label: "Categories" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
   { href: "/#faq", label: "FAQ" },
 ];
 
@@ -19,6 +22,7 @@ const getRoleLinks = (user) => {
   if (user.role === "employer") {
     return [
       { href: "/manage", label: "Manage" },
+      { href: "/manage/new", label: "Post opportunity" },
       { href: "/profile", label: "Profile" },
     ];
   }

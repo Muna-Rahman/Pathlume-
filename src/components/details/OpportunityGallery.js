@@ -19,7 +19,7 @@ const hashString = (value) => {
 };
 
 export function OpportunityGallery({ opportunity }) {
-  const { title = "", companyName = "" } = opportunity || {};
+  const { title = "", companyName = "", imageUrl = "" } = opportunity || {};
 
   const { palette, nodes } = useMemo(() => {
     const seed = hashString(title + companyName);
@@ -38,6 +38,15 @@ export function OpportunityGallery({ opportunity }) {
     .map((w) => w[0])
     .join("")
     .toUpperCase();
+
+  if (imageUrl) {
+    return (
+      <div className="relative h-52 w-full overflow-hidden rounded-xl2 border border-white/[0.08] md:h-72">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={imageUrl} alt={title} className="h-full w-full object-cover" />
+      </div>
+    );
+  }
 
   return (
     <div

@@ -24,6 +24,7 @@ const DEFAULT_VALUES = {
   stipend: 0,
   deadline: "",
   applicationUrl: "",
+  imageUrl: "",
   status: "active",
 };
 
@@ -133,6 +134,16 @@ export function OpportunityForm({ opportunity }) {
           <Input label="Deadline" type="date" {...register("deadline")} />
           <Input label="Application URL" placeholder="https://..." {...register("applicationUrl")} />
         </div>
+
+        <Input
+          label="Image URL (optional)"
+          placeholder="https://images.example.com/cover.jpg"
+          error={errors.imageUrl?.message}
+          {...register("imageUrl", {
+            validate: (value) =>
+              !value || /^https?:\/\/.+/i.test(value) || "Must be a valid http(s) URL",
+          })}
+        />
       </GlassPanel>
 
       {errors.root && <p className="text-sm text-danger">{errors.root.message}</p>}

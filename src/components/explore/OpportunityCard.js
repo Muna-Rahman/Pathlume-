@@ -6,9 +6,39 @@ import { GlassPanel } from "@/components/ui/GlassPanel.js";
 import { Badge } from "@/components/ui/Badge.js";
 import { formatStipend, formatRelativeTime, titleCase } from "@/lib/utils/format.js";
 
+/** Deterministic fallback gradient so cards without an imageUrl still look intentional, not broken. */
+const FALLBACK_PALETTES = [
+  ["#F5B860", "#4FD8C4"],
+  ["#4FD8C4", "#B892F5"],
+  ["#B892F5", "#F5B860"],
+];
+
+const hashString = (value) => {
+  let hash = 0;
+  for (let i = 0; i < value.length; i++) {
+    hash = (hash << 5) - hash + value.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+};
+
 export function OpportunityCard({ opportunity, index = 0 }) {
-  const { _id, title, companyName, type, location, remote, skillsRequired = [], stipend, createdAt } =
-    opportunity;
+  const {
+    _id,
+    title,
+    companyName,
+    type,
+    location,
+    remote,
+    skillsRequired = [],
+    stipend,
+    createdAt,
+    imageUrl,
+    description,
+  } = opportunity;
+
+  const palette = FALLBACK_PALETTES[hashString(title + companyName) % FALLBACK_PALETTES.length];
+  const shortDescription = description ? description.slice(0, 90).trim() + (description.length > 90 ? "…" : "") : "";
 
   return (
     <motion.div
@@ -19,6 +49,28 @@ export function OpportunityCard({ opportunity, index = 0 }) {
     >
       <Link href={`/opportunities/${_id}`} className="group block h-full">
         <GlassPanel hover className="flex h-full flex-col gap-4 p-5">
+          <div className="relative -mx-5 -mt-5 h-32 w-[calc(100%+2.5rem)] overflow-hidden rounded-t-xl2">
+            {imageUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={imageUrl}
+                alt={title}
+                className="h-full w-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+            ) : (
+              <div
+                className="h-full w-full"
+                style={{
+                  background: `linear-gradient(135deg, ${palette[0]}33 0%, ${palette[1]}33 100%)`,
+                }}
+              />
+            )}
+          </div>
+
           <div className="flex items-start justify-between gap-3">
             <div>
               <h3 className="font-display text-base font-semibold text-ink transition-colors group-hover:text-path">
@@ -28,6 +80,8 @@ export function OpportunityCard({ opportunity, index = 0 }) {
             </div>
             <Badge tone="lume">{titleCase(type)}</Badge>
           </div>
+
+          {shortDescription && <p className="text-sm text-ink-muted">{shortDescription}</p>}
 
           <div className="flex flex-wrap gap-1.5">
             {skillsRequired.slice(0, 3).map((skill) => (
