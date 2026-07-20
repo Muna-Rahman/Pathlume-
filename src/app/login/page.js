@@ -1,8 +1,10 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { AuthCard } from "@/components/auth/AuthCard.js";
 import { LoginForm } from "@/components/auth/LoginForm.js";
 import { SocialLoginButton } from "@/components/auth/SocialLoginButton.js";
 import { DemoLoginButtons } from "@/components/auth/DemoLoginButtons.js";
+import { OAuthErrorNotice } from "@/components/auth/OAuthErrorNotice.js";
 
 export const metadata = { title: "Log in - Pathlume" };
 
@@ -21,6 +23,10 @@ export default function LoginPage() {
         </>
       }
     >
+      <Suspense fallback={null}>
+        <OAuthErrorNotice />
+      </Suspense>
+
       <LoginForm />
 
       <div className="my-5 flex items-center gap-3">
