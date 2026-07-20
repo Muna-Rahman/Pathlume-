@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-void text-ink font-body antialiased;
+  background-image: var(--tw-gradient-stops, none);
+}
+
+::selection {
+  background-color: rgba(245, 184, 96, 0.28);
+  color: #fff;
+}
+
+/* Visible keyboard focus everywhere, styled to match the theme instead of the browser default */
+:focus-visible {
+  outline: 2px solid theme("colors.lume.DEFAULT");
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply relative rounded-xl2 border border-white/[0.08] bg-panel/60 shadow-panel backdrop-blur-xl;
+  }
+
+  .glass-panel-hover {
+    @apply transition-all duration-300 hover:border-white/[0.14] hover:shadow-glow;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-path;
+  }
+
+  .gradient-text {
+    @apply bg-lume-path bg-clip-text text-transparent;
+  }
+
+  .skeleton-shimmer {
+    @apply relative overflow-hidden bg-panel-light;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    @apply absolute inset-0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.06),
+      transparent
+    );
+    background-size: 400px 100%;
+    animation: shimmer 1.6s linear infinite;
+  }
+}
+
+/* Thin scrollbar to match the panel-dark aesthetic */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #23283f;
+  border-radius: 999px;
+  border: 2px solid #0a0c16;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e3452;
+}
