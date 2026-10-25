@@ -45,7 +45,7 @@ export function OpportunityFilters({ filters, onChange, onReset }) {
           type="checkbox"
           checked={filters.remote === "true"}
           onChange={(e) => onChange({ remote: e.target.checked ? "true" : undefined })}
-          className="h-4 w-4 rounded border-white/20 bg-void-soft accent-path"
+          className="h-4 w-4 rounded border-ink/20 bg-void-soft accent-path"
         />
         Remote only
       </label>

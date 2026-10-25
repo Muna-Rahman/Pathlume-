@@ -3,9 +3,9 @@
 import { useMemo } from "react";
 
 const PALETTES = [
-  ["#F5B860", "#4FD8C4"],
-  ["#4FD8C4", "#B892F5"],
-  ["#B892F5", "#F5B860"],
+  ["#E2A547", "#8FCB6A"],
+  ["#8FCB6A", "#E58A4B"],
+  ["#E58A4B", "#E2A547"],
 ];
 
 /** Deterministic hash so the same opportunity always renders the same pattern. */
@@ -41,7 +41,7 @@ export function OpportunityGallery({ opportunity }) {
 
   if (imageUrl) {
     return (
-      <div className="relative h-52 w-full overflow-hidden rounded-xl2 border border-white/[0.08] md:h-72">
+      <div className="relative h-52 w-full overflow-hidden rounded-xl2 border border-ink/[0.08] md:h-72">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={imageUrl} alt={title} className="h-full w-full object-cover" />
       </div>
@@ -50,9 +50,9 @@ export function OpportunityGallery({ opportunity }) {
 
   return (
     <div
-      className="relative h-52 w-full overflow-hidden rounded-xl2 border border-white/[0.08] md:h-72"
+      className="relative h-52 w-full overflow-hidden rounded-xl2 border border-ink/[0.08] md:h-72"
       style={{
-        background: `radial-gradient(120% 100% at 0% 0%, ${palette[0]}22 0%, transparent 55%), radial-gradient(120% 100% at 100% 100%, ${palette[1]}22 0%, transparent 55%), #0F1220`,
+        background: `radial-gradient(120% 100% at 0% 0%, ${palette[0]}22 0%, transparent 55%), radial-gradient(120% 100% at 100% 100%, ${palette[1]}22 0%, transparent 55%), #261A12`,
       }}
     >
       <svg className="absolute inset-0 h-full w-full opacity-60" preserveAspectRatio="none">
@@ -82,7 +82,7 @@ export function OpportunityGallery({ opportunity }) {
       </svg>
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-void/70 font-display text-2xl font-semibold text-ink backdrop-blur-md md:h-24 md:w-24 md:text-3xl">
+        <span className="flex h-20 w-20 items-center justify-center rounded-2xl border border-ink/10 bg-void/70 font-display text-2xl font-semibold text-ink backdrop-blur-md md:h-24 md:w-24 md:text-3xl">
           {initials}
         </span>
       </div>

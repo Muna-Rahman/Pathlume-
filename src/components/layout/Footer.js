@@ -59,7 +59,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] px-4 py-14">
+    <footer className="border-t border-ink/[0.06] px-4 py-14">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-6">
           <div className="col-span-2">
@@ -94,7 +94,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 text-ink-muted transition-colors hover:border-path/50 hover:text-path"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-ink/10 text-ink-muted transition-colors hover:border-path/50 hover:text-path"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     {social.icon}
@@ -120,7 +120,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/[0.06] pt-6 text-xs text-ink-faint md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink/[0.06] pt-6 text-xs text-ink-faint md:flex-row">
           <p>© {new Date().getFullYear()} Pathlume. All paths lead somewhere.</p>
           <p className="font-mono">Built for students, by students.</p>
         </div>

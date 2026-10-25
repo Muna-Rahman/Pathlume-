@@ -8,9 +8,9 @@ import { formatStipend, formatRelativeTime, titleCase } from "@/lib/utils/format
 
 /** Deterministic fallback gradient so cards without an imageUrl still look intentional, not broken. */
 const FALLBACK_PALETTES = [
-  ["#F5B860", "#4FD8C4"],
-  ["#4FD8C4", "#B892F5"],
-  ["#B892F5", "#F5B860"],
+  ["#E2A547", "#8FCB6A"],
+  ["#8FCB6A", "#E58A4B"],
+  ["#E58A4B", "#E2A547"],
 ];
 
 const hashString = (value) => {
@@ -92,7 +92,7 @@ export function OpportunityCard({ opportunity, index = 0 }) {
             {skillsRequired.length > 3 && <Badge tone="neutral">+{skillsRequired.length - 3}</Badge>}
           </div>
 
-          <div className="mt-auto flex items-center justify-between border-t border-white/[0.06] pt-3 text-xs text-ink-muted">
+          <div className="mt-auto flex items-center justify-between border-t border-ink/[0.06] pt-3 text-xs text-ink-muted">
             <span className="flex items-center gap-1.5">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0">
                 <path

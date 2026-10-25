@@ -19,19 +19,19 @@ export default function GlobalError({ error, reset }) {
           justifyContent: "center",
           textAlign: "center",
           padding: "24px",
-          background: "#0A0C16",
-          color: "#EDEFF8",
+          background: "#1B120D",
+          color: "#F6E8CC",
           fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
         <div style={{ maxWidth: 420 }}>
-          <p style={{ fontFamily: "monospace", fontSize: 13, color: "#F0708A", margin: 0 }}>
+          <p style={{ fontFamily: "monospace", fontSize: 13, color: "#E8705E", margin: 0 }}>
             Critical error
           </p>
           <h1 style={{ fontSize: 28, fontWeight: 600, marginTop: 12 }}>
             Pathlume hit an unexpected snag
           </h1>
-          <p style={{ fontSize: 14, color: "#8B93AC", marginTop: 12 }}>
+          <p style={{ fontSize: 14, color: "#C9B48F", marginTop: 12 }}>
             The application failed to load. Reloading usually fixes this - if it keeps happening,
             let us know through the contact page once you're back in.
           </p>
@@ -42,8 +42,8 @@ export default function GlobalError({ error, reset }) {
               padding: "10px 24px",
               borderRadius: 12,
               border: "none",
-              background: "linear-gradient(90deg, #F5B860 0%, #4FD8C4 100%)",
-              color: "#0A0C16",
+              background: "linear-gradient(180deg, #F5CB78 0%, #E2A547 45%, #B9772A 100%)",
+              color: "#1B120D",
               fontWeight: 600,
               cursor: "pointer",
             }}

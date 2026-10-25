@@ -36,7 +36,7 @@ export function SearchBar({ value, onChange, placeholder = "Search by title, ski
         onChange={(e) => setLocalValue(e.target.value)}
         placeholder={placeholder}
         aria-label="Search opportunities"
-        className="w-full rounded-xl border border-white/10 bg-void-soft/60 py-3 pl-11 pr-4 text-sm text-ink placeholder:text-ink-faint outline-none transition-colors focus:border-path/60"
+        className="w-full rounded-xl border border-ink/10 bg-void-soft/60 py-3 pl-11 pr-4 text-sm text-ink placeholder:text-ink-faint outline-none transition-colors focus:border-path/60"
       />
     </div>
   );

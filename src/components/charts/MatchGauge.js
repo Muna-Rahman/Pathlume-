@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const COLOR_STOPS = [
-  { min: 0, color: "#8B93AC" },
-  { min: 40, color: "#4FD8C4" },
-  { min: 70, color: "#F5B860" },
+  { min: 0, color: "#C9B48F" },
+  { min: 40, color: "#8FCB6A" },
+  { min: 70, color: "#E2A547" },
 ];
 
 const colorFor = (percentage) => {
@@ -25,7 +25,7 @@ export function MatchGauge({ percentage = 0, size = 88, strokeWidth = 8, label =
   return (
     <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
       <svg width={size} height={size} className="-rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={radius} stroke="rgba(255,255,255,0.08)" strokeWidth={strokeWidth} fill="none" />
+        <circle cx={size / 2} cy={size / 2} r={radius} stroke="rgba(246,232,204,0.12)" strokeWidth={strokeWidth} fill="none" />
         <motion.circle
           cx={size / 2}
           cy={size / 2}

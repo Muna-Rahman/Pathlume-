@@ -38,7 +38,7 @@ export function ResumePreview() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <GlassPanel className="relative mx-auto max-w-sm p-6">
-            <div className="flex items-center justify-between border-b border-white/[0.06] pb-4">
+            <div className="flex items-center justify-between border-b border-ink/[0.06] pb-4">
               <div>
                 <p className="font-display text-sm font-semibold text-ink">Nusrat Jahan</p>
                 <p className="text-xs text-ink-faint">resume.pdf · scanned</p>
@@ -51,9 +51,9 @@ export function ResumePreview() {
             </div>
 
             <div className="mt-4 space-y-2">
-              <div className="h-2 w-full rounded-full bg-white/[0.06]" />
-              <div className="h-2 w-5/6 rounded-full bg-white/[0.06]" />
-              <div className="h-2 w-4/6 rounded-full bg-white/[0.06]" />
+              <div className="h-2 w-full rounded-full bg-ink/[0.06]" />
+              <div className="h-2 w-5/6 rounded-full bg-ink/[0.06]" />
+              <div className="h-2 w-4/6 rounded-full bg-ink/[0.06]" />
             </div>
 
             <div className="mt-5">

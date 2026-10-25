@@ -11,7 +11,7 @@ export function SkillBarChart({ matched = [], missing = [] }) {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="h-2.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
+      <div className="h-2.5 w-full overflow-hidden rounded-full bg-ink/[0.06]">
         <motion.div
           className="h-full rounded-full bg-lume-path"
           initial={{ width: 0 }}

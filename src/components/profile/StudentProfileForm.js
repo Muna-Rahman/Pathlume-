@@ -99,7 +99,7 @@ export function StudentProfileForm() {
         {fields.length === 0 && <p className="text-sm text-ink-faint">No experience added yet.</p>}
 
         {fields.map((field, index) => (
-          <div key={field.id} className="flex flex-col gap-3 rounded-xl border border-white/[0.06] p-4">
+          <div key={field.id} className="flex flex-col gap-3 rounded-xl border border-ink/[0.06] p-4">
             <div className="grid gap-3 sm:grid-cols-2">
               <Input label="Title" placeholder="e.g. Software Intern" {...register(`experience.${index}.title`)} />
               <Input label="Organization" placeholder="e.g. Acme Co" {...register(`experience.${index}.organization`)} />

@@ -5,36 +5,38 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Semantic names are kept from the original theme so every component keeps working;
+        // only the values changed (night sky -> lantern-lit wood, brass and forest green).
         void: {
-          DEFAULT: "#0A0C16",
-          soft: "#0F1220",
-          deep: "#060710",
+          DEFAULT: "#1B120D", // dark oak
+          soft: "#261A12",
+          deep: "#120B07",
         },
         panel: {
-          DEFAULT: "#12162C",
-          light: "#171C38",
+          DEFAULT: "#2E2016", // leather / plank
+          light: "#3C2A1C",
         },
         lume: {
-          DEFAULT: "#F5B860",
-          soft: "#FFD79A",
-          dim: "#B8874A",
+          DEFAULT: "#E2A547", // brass / gold
+          soft: "#F5D08A",
+          dim: "#9A6B2C",
         },
         path: {
-          DEFAULT: "#4FD8C4",
-          soft: "#8CEBDC",
-          dim: "#2E9385",
+          DEFAULT: "#8FCB6A", // leaf green
+          soft: "#B8E394",
+          dim: "#4F8A3A",
         },
         nebula: {
-          DEFAULT: "#B892F5",
-          soft: "#D5C2FB",
-          dim: "#8562C2",
+          DEFAULT: "#E58A4B", // copper / ember
+          soft: "#F2B287",
+          dim: "#A85A25",
         },
         ink: {
-          DEFAULT: "#EDEFF8",
-          muted: "#8B93AC",
-          faint: "#5A6180",
+          DEFAULT: "#F6E8CC", // parchment
+          muted: "#C9B48F",
+          faint: "#8F7B58",
         },
-        danger: "#F0708A",
+        danger: "#E8705E", // ribbon red
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
@@ -43,14 +45,14 @@ export default {
       },
       backgroundImage: {
         "aurora-gradient":
-          "radial-gradient(60% 50% at 20% 20%, rgba(245,184,96,0.16) 0%, transparent 60%), radial-gradient(50% 45% at 85% 15%, rgba(79,216,196,0.14) 0%, transparent 60%), radial-gradient(55% 50% at 50% 100%, rgba(184,146,245,0.14) 0%, transparent 60%)",
-        "lume-path": "linear-gradient(90deg, #F5B860 0%, #4FD8C4 100%)",
-        "path-nebula": "linear-gradient(135deg, #4FD8C4 0%, #B892F5 100%)",
+          "radial-gradient(55% 45% at 15% 10%, rgba(226,165,71,0.20) 0%, transparent 62%), radial-gradient(45% 40% at 90% 12%, rgba(143,203,106,0.12) 0%, transparent 62%), radial-gradient(60% 50% at 50% 105%, rgba(229,138,75,0.16) 0%, transparent 62%), radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0,0,0,0.45) 100%)",
+        "lume-path": "linear-gradient(180deg, #F5CB78 0%, #E2A547 45%, #B9772A 100%)",
+        "path-nebula": "linear-gradient(180deg, #A9DB86 0%, #8FCB6A 45%, #4F8A3A 100%)",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(255,255,255,0.06), 0 8px 40px -12px rgba(245,184,96,0.25)",
-        "glow-path": "0 0 0 1px rgba(255,255,255,0.06), 0 8px 40px -12px rgba(79,216,196,0.3)",
-        panel: "0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 60px -20px rgba(0,0,0,0.6)",
+        glow: "inset 0 2px 0 rgba(255,236,190,0.5), 0 4px 0 #5A3A14, 0 10px 18px -6px rgba(0,0,0,0.65)",
+        "glow-path": "inset 0 2px 0 rgba(220,255,190,0.4), 0 4px 0 #2F5A22, 0 10px 18px -6px rgba(0,0,0,0.65)",
+        panel: "inset 0 0 0 2px rgba(18,11,7,0.7), inset 0 2px 0 rgba(255,222,160,0.12), 0 5px 0 rgba(0,0,0,0.35), 0 18px 36px -16px rgba(0,0,0,0.7)",
       },
       borderRadius: {
         xl2: "1.25rem",

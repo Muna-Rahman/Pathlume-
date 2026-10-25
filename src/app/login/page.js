@@ -30,9 +30,9 @@ export default function LoginPage() {
       <LoginForm />
 
       <div className="my-5 flex items-center gap-3">
-        <span className="h-px flex-1 bg-white/10" />
+        <span className="h-px flex-1 bg-ink/10" />
         <span className="font-mono text-[11px] uppercase tracking-wide text-ink-faint">or</span>
-        <span className="h-px flex-1 bg-white/10" />
+        <span className="h-px flex-1 bg-ink/10" />
       </div>
 
       <div className="flex flex-col gap-3">

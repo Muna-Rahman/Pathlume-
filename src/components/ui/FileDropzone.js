@@ -30,7 +30,7 @@ export function FileDropzone({ onFileSelect, accept = "application/pdf", label =
       onClick={() => inputRef.current?.click()}
       className={cn(
         "flex cursor-pointer flex-col items-center gap-2 rounded-xl2 border border-dashed px-6 py-10 text-center transition-colors",
-        isDragging ? "border-path bg-path/5" : "border-white/15 hover:border-white/25"
+        isDragging ? "border-path bg-path/5" : "border-ink/15 hover:border-ink/25"
       )}
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-path">

@@ -15,9 +15,9 @@ export const Input = forwardRef(function Input({ label, error, className, id, ..
         id={inputId}
         ref={ref}
         className={cn(
-          "rounded-xl border bg-void-soft/60 px-4 py-2.5 text-ink placeholder:text-ink-faint",
-          "border-white/10 outline-none transition-colors focus:border-path/60",
-          error && "border-danger/60",
+          "rounded-xl border-2 bg-void-deep/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] px-4 py-2.5 text-ink placeholder:text-ink-faint",
+          "border-lume-dim/50 outline-none transition-colors focus:border-lume",
+          error && "border-danger",
           className
         )}
         {...props}

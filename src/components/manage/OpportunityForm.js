@@ -109,7 +109,7 @@ export function OpportunityForm({ opportunity }) {
             {...register("location", { required: "Location is required" })}
           />
           <label className="flex items-end gap-2.5 pb-2.5 text-sm text-ink-muted">
-            <input type="checkbox" className="h-4 w-4 rounded border-white/20 bg-void-soft accent-path" {...register("remote")} />
+            <input type="checkbox" className="h-4 w-4 rounded border-ink/20 bg-void-soft accent-path" {...register("remote")} />
             This role is remote
           </label>
         </div>

@@ -15,7 +15,7 @@ export function OpportunityCardSkeleton() {
         <SkeletonLine className="h-6 w-14 rounded-full" />
         <SkeletonLine className="h-6 w-14 rounded-full" />
       </div>
-      <div className="mt-auto flex items-center justify-between border-t border-white/[0.06] pt-3">
+      <div className="mt-auto flex items-center justify-between border-t border-ink/[0.06] pt-3">
         <SkeletonLine className="w-20" />
         <SkeletonLine className="w-14" />
       </div>

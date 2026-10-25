@@ -5,14 +5,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn.js";
 
+// Chunky "carved button" look: bevelled highlight on top, solid lip underneath.
 const VARIANTS = {
   primary:
-    "bg-lume-path text-void font-semibold shadow-glow hover:brightness-110 active:brightness-95",
+    "bg-lume-path text-void font-bold border-2 border-[#5A3A14] shadow-glow hover:brightness-110",
   secondary:
-    "bg-panel-light border border-white/10 text-ink hover:border-path/50 hover:text-path",
-  ghost: "text-ink-muted hover:text-ink hover:bg-white/5",
-  outline: "border border-white/15 text-ink hover:border-lume/60 hover:text-lume",
-  danger: "bg-danger/15 text-danger border border-danger/30 hover:bg-danger/25",
+    "bg-gradient-to-b from-panel-light to-panel text-ink font-semibold border-2 border-lume-dim shadow-[inset_0_1px_0_rgba(255,222,160,0.18),0_3px_0_rgba(0,0,0,0.5)] hover:border-lume hover:text-lume-soft",
+  ghost: "text-ink-muted font-semibold hover:text-lume-soft hover:bg-ink/5",
+  outline:
+    "border-2 border-lume-dim text-lume-soft font-semibold hover:border-lume hover:bg-lume/10",
+  danger:
+    "bg-gradient-to-b from-[#D9644F] to-[#A13E2F] text-ink font-semibold border-2 border-[#5A1F17] shadow-[inset_0_1px_0_rgba(255,200,180,0.4),0_3px_0_#5A1F17] hover:brightness-110",
 };
 
 const SIZES = {
@@ -31,7 +34,7 @@ export const Button = forwardRef(function Button(
   ref
 ) {
   const classes = cn(
-    "inline-flex items-center justify-center whitespace-nowrap font-display tracking-wide transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none",
+    "inline-flex items-center justify-center whitespace-nowrap font-display tracking-wide transition-[filter,background-color,border-color,color] duration-150 disabled:opacity-50 disabled:pointer-events-none",
     VARIANTS[variant],
     SIZES[size],
     className
@@ -48,7 +51,7 @@ export const Button = forwardRef(function Button(
 
   if (href) {
     return (
-      <Link href={href} ref={ref} className={classes} {...props}>
+      <Link href={href} ref={ref} className={cn(classes, "active:translate-y-0.5")} {...props}>
         {content}
       </Link>
     );
@@ -58,7 +61,7 @@ export const Button = forwardRef(function Button(
     <motion.button
       ref={ref}
       type={type}
-      whileTap={{ scale: 0.97 }}
+      whileTap={{ y: 2 }}
       className={classes}
       disabled={disabled || loading}
       {...props}

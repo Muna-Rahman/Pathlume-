@@ -12,7 +12,7 @@ export function AuthCard({ eyebrow, title, subtitle, children, footer }) {
 
         <div className="mt-6">{children}</div>
 
-        {footer && <div className="mt-6 border-t border-white/[0.06] pt-5 text-center text-sm text-ink-muted">{footer}</div>}
+        {footer && <div className="mt-6 border-t border-ink/[0.06] pt-5 text-center text-sm text-ink-muted">{footer}</div>}
       </GlassPanel>
     </div>
   );

@@ -16,13 +16,13 @@ function Star({ filled, half, size, onMouseEnter, onClick, interactive }) {
     >
       <defs>
         <linearGradient id="half-star-gradient">
-          <stop offset="50%" stopColor="#F5B860" />
-          <stop offset="50%" stopColor="#2A2F4A" />
+          <stop offset="50%" stopColor="#E2A547" />
+          <stop offset="50%" stopColor="#4a3322" />
         </linearGradient>
       </defs>
       <path
         d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9L10 14.9l-5.2 2.9 1-5.9L1.5 7.7l5.9-.8L10 1.5z"
-        fill={half ? "url(#half-star-gradient)" : filled ? "#F5B860" : "#2A2F4A"}
+        fill={half ? "url(#half-star-gradient)" : filled ? "#E2A547" : "#4a3322"}
       />
     </svg>
   );

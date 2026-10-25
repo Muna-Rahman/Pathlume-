@@ -1,25 +1,26 @@
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Cinzel, Nunito, Alegreya_Sans_SC } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers.js";
 import { Navbar } from "@/components/layout/Navbar.js";
 import { Footer } from "@/components/layout/Footer.js";
 
-const display = Space_Grotesk({
+// Storybook / fantasy-UI type: engraved serif headings, friendly rounded body, small-caps labels
+const display = Cinzel({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["500", "600", "700"],
 });
 
-const body = Inter({
+const body = Nunito({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600"],
 });
 
-const mono = JetBrains_Mono({
+const mono = Alegreya_Sans_SC({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "500"],
+  weight: ["400", "500", "700"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";

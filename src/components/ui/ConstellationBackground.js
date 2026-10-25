@@ -19,7 +19,7 @@ export function ConstellationBackground({ density = 0.00009, className }) {
     const ctx = canvas.getContext("2d");
     let width, height, nodes, raf;
 
-    const colors = ["#F5B860", "#4FD8C4", "#B892F5"];
+    const colors = ["#F5D08A", "#E2A547", "#B8E394"]; // warm fireflies
 
     const resize = () => {
       width = canvas.offsetWidth;
@@ -55,7 +55,7 @@ export function ConstellationBackground({ density = 0.00009, className }) {
           const b = nodes[j];
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
           if (dist < 140) {
-            ctx.strokeStyle = `rgba(140, 150, 190, ${0.12 * (1 - dist / 140)})`;
+            ctx.strokeStyle = `rgba(226, 165, 71, ${0.14 * (1 - dist / 140)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -69,8 +69,11 @@ export function ConstellationBackground({ density = 0.00009, className }) {
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
         ctx.fillStyle = node.color;
+        ctx.shadowColor = node.color;
+        ctx.shadowBlur = 8;
         ctx.globalAlpha = 0.85;
         ctx.fill();
+        ctx.shadowBlur = 0;
         ctx.globalAlpha = 1;
       }
 

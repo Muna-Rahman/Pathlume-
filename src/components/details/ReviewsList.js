@@ -25,7 +25,7 @@ export function ReviewsList({ opportunityId }) {
       </div>
 
       {user && (
-        <div className="mt-5 border-b border-white/[0.06] pb-6">
+        <div className="mt-5 border-b border-ink/[0.06] pb-6">
           <ReviewForm opportunityId={opportunityId} />
         </div>
       )}
@@ -48,7 +48,7 @@ export function ReviewsList({ opportunityId }) {
 
         {!isLoading &&
           reviews.map((review) => (
-            <div key={review._id} className="border-b border-white/[0.04] pb-5 last:border-0 last:pb-0">
+            <div key={review._id} className="border-b border-ink/[0.04] pb-5 last:border-0 last:pb-0">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-sm font-medium text-ink">{review.userName}</p>

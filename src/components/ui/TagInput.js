@@ -31,9 +31,9 @@ export function TagInput({ label, value = [], onChange, placeholder = "Type and 
       {label && <label className="font-mono text-xs uppercase tracking-wide text-ink-muted">{label}</label>}
       <div
         className={cn(
-          "flex flex-wrap items-center gap-2 rounded-xl border bg-void-soft/60 px-3 py-2.5",
-          "border-white/10 focus-within:border-path/60",
-          error && "border-danger/60"
+          "flex flex-wrap items-center gap-2 rounded-xl border-2 bg-void-deep/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] px-3 py-2.5",
+          "border-lume-dim/50 focus-within:border-lume",
+          error && "border-danger"
         )}
       >
         {value.map((tag) => (

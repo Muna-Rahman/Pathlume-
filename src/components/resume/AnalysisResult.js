@@ -27,7 +27,7 @@ export function AnalysisResult({ analysis }) {
         </div>
 
         {gapAnalysis?.coverage !== null && gapAnalysis?.coverage !== undefined && (
-          <div className="flex items-center gap-5 rounded-xl border border-white/[0.06] p-4">
+          <div className="flex items-center gap-5 rounded-xl border border-ink/[0.06] p-4">
             <MatchGauge percentage={gapAnalysis.coverage} label="coverage" />
             <div>
               <p className="text-sm text-ink">

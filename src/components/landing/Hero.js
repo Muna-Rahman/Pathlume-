@@ -16,7 +16,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="eyebrow inline-flex items-center gap-2 rounded-full border border-white/10 bg-void/60 px-3 py-1 backdrop-blur"
+          className="eyebrow inline-flex items-center gap-2 rounded-full border border-ink/10 bg-void/60 px-3 py-1 backdrop-blur"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-path animate-pulse-node" />
           Now matching students in Bangladesh &amp; beyond

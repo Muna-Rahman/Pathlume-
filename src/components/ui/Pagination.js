@@ -12,7 +12,7 @@ export function Pagination({ meta, onPageChange }) {
       <button
         onClick={() => onPageChange(meta.page - 1)}
         disabled={!meta.hasPrevPage}
-        className="rounded-lg border border-white/10 px-3 py-2 text-sm text-ink-muted transition-colors hover:border-path/50 hover:text-path disabled:opacity-30"
+        className="rounded-lg border-2 border-lume-dim/60 bg-panel px-3 py-2 text-sm font-semibold text-ink-muted transition-colors hover:border-lume hover:text-lume-soft disabled:opacity-30"
       >
         Prev
       </button>
@@ -28,8 +28,8 @@ export function Pagination({ meta, onPageChange }) {
               className={cn(
                 "h-9 w-9 rounded-lg font-mono text-sm transition-colors",
                 page === meta.page
-                  ? "bg-lume-path text-void font-semibold"
-                  : "text-ink-muted hover:bg-white/5 hover:text-ink"
+                  ? "bg-lume-path text-void font-bold border-2 border-[#5A3A14]"
+                  : "text-ink-muted hover:bg-ink/10 hover:text-ink"
               )}
             >
               {page}
@@ -41,7 +41,7 @@ export function Pagination({ meta, onPageChange }) {
       <button
         onClick={() => onPageChange(meta.page + 1)}
         disabled={!meta.hasNextPage}
-        className="rounded-lg border border-white/10 px-3 py-2 text-sm text-ink-muted transition-colors hover:border-path/50 hover:text-path disabled:opacity-30"
+        className="rounded-lg border-2 border-lume-dim/60 bg-panel px-3 py-2 text-sm font-semibold text-ink-muted transition-colors hover:border-lume hover:text-lume-soft disabled:opacity-30"
       >
         Next
       </button>
